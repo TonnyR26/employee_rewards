@@ -1,0 +1,20 @@
+<odoo>
+    <template id="report_employee_reward_template">
+        <!-- Utilise le layout standard Odoo (header/footer) -->
+        <t t-call="web.external_layout">
+            <t t-set="title">Récompenses Employés</t>
+            
+            <!-- Boucle sur tous les enregistrements sélectionnés -->
+            <t t-foreach="docs" t-as="reward">
+                <div class="page">
+                    <h2>Récompense : <t t-esc="reward.name"/></h2>
+                    <p>Employé : <t t-esc="reward.employee_id.name"/></p>
+                    <p>Type : <t t-esc="reward.reward_type"/></p>
+                    <p>Points : <t t-esc="reward.points"/></p>
+                    <p>Date : <t t-esc="reward.date_reward"/></p>
+                    <p>Description : <t t-esc="reward.description"/></p>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>
