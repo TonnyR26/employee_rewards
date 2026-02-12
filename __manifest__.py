@@ -13,6 +13,8 @@
         'views/employee_reward_menu.xml',
         'report/report_employee_reward.xml',
         'report/report_employee_reward_template.xml',
+        'report/employee_reward_zpl_report.xml',
+        'report/employee_reward_zpl_template.xml',
     ],
     'installable': True,
     'application': True,
