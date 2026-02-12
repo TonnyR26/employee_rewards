@@ -31,51 +31,37 @@
                     <button name="action_approve" string="Approuver" type="object" invisible="state == 'draft'"/>
                     <button name="action_done" string="Attribuer" type="object" invisible="state == 'draft'"/>
                     <button name="action_cancel" string="Annuler" type="object" invisible="state == 'draft'"/>
-                    <button name="action_print_pdf" type="object" string="Imprimer PDF" invisible="state == 'draft'"/>
                     <button name="action_print_zpl" type="object" string="Imprimer ZPL" invisible="state == 'draft'"/>
                 </header>
 
                 <sheet>
-                    <group>
-                        <field name="name"/>
-                        <field name="employee_id"/>
-                        <field name="date_reward"/>
-                        <field name="reward_type"/>
-                        <field name="points"/>
-                    </group>
+                    <notebook>
+                        <page string="Informations">
+                            <group>
+                                <field name="name"/>
+                                <field name="employee_id"/>
+                                <field name="date_reward"/>
+                                <field name="reward_type"/>
+                                <field name="points"/>
+                            </group>
+                        </page>
 
-                    <group>
-                        <field name="description"/>
-                    </group>
+                        <page string="Description">
+                            <group>
+                                <field name="description"/>
+                            </group>
+                        </page>
 
-                    <group>
-                        <field name="reward_count" readonly="1"/>
-                    </group>
+                        <page string="Statistiques">
+                            <group>
+                                <field name="reward_count" readonly="1"/>
+                            </group>
+                        </page>
+                    </notebook>
                 </sheet>
+
                 <chatter/>
             </form>
         </field>
     </record>
-
-    <!-- ACTION -->
-    <record id="action_employee_rewards" model="ir.actions.act_window">
-        <field name="name">Récompenses Employés</field>
-        <field name="res_model">employee.reward</field>
-        <field name="view_mode">list,form</field>
-        <field name="view_id" ref="view_employee_reward_list"/>
-        <field name="views" eval="[
-            (ref('view_employee_reward_list'), 'list'),
-            (ref('view_employee_reward_form'), 'form')
-        ]"/>
-    </record>
-
-    <!-- MENUS -->
-    <menuitem id="menu_reward_root"
-              name="Récompenses"
-              web_icon="employee_rewards,static/description/icon.png"/>
-
-    <menuitem id="menu_reward"
-              name="Gestion des récompenses"
-              parent="menu_reward_root"
-              action="action_employee_rewards"/>
 </odoo>

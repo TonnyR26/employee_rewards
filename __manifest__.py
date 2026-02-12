@@ -10,6 +10,7 @@
     'data': [
         'security/ir.model.access.csv',
         'views/employee_reward_views.xml',
+        'views/employee_reward_menu.xml',
         'report/report_employee_reward.xml',
         'report/report_employee_reward_template.xml',
     ],

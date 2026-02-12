@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ACTION -->
+    <record id="action_employee_rewards" model="ir.actions.act_window">
+        <field name="name">Récompenses Employés</field>
+        <field name="res_model">employee.reward</field>
+        <!-- Ajoutez 'kanban' et d'autres modes ici (l'ordre définit la vue par défaut) -->
+        <field name="view_mode">kanban,list,form,pivot,graph</field>
+        <!-- Le champ 'help' affiche le message quand la liste est vide -->
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Créez votre première récompense !
+            </p>
+            <p>
+                C'est ici que vous pourrez gérer les gratifications de vos employés.
+            </p>
+        </field>
+    </record>
+
+
+    <!-- MENUS -->
+    <menuitem id="menu_reward_root"
+              name="Récompenses"
+              web_icon="employee_rewards,static/description/icon.png"/>
+
+    <menuitem id="menu_reward"
+              name="Gestion des récompenses"
+              parent="menu_reward_root"
+              action="action_employee_rewards"/>
+
+</odoo>
