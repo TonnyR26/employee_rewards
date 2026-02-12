@@ -1,0 +1,11 @@
+<odoo>
+    <record id="employee_reward_zpl_report_action" model="ir.actions.report">
+        <field name="name">Récompense Employé (ZPL)</field>
+        <field name="model">employee.reward</field>
+        <field name="report_type">qweb-text</field>
+        <field name="report_name">employee_rewards.report_employee_reward_zpl</field>
+        <field name="report_file">employee_rewards.report_employee_reward_zpl</field>
+        <field name="binding_model_id" ref="model_employee_reward"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

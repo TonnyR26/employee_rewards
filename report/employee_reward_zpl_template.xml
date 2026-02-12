@@ -1,0 +1,12 @@
+<odoo>
+    <template id="report_employee_reward_zpl">
+        <t t-foreach="docs" t-as="reward">
+            ^XA
+            ^FO50,50^A0N,40,40^FDReward: <t t-esc="reward.name"/>^FS
+            ^FO50,100^A0N,30,30^FDEmployee: <t t-esc="reward.employee_id.name"/>^FS
+            ^FO50,140^A0N,30,30^FDPoints: <t t-esc="reward.points"/>^FS
+            ^FO50,180^A0N,30,30^FDDate: <t t-esc="reward.date_reward"/>^FS
+            ^XZ
+        </t>
+    </template>
+</odoo>
